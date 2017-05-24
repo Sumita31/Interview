@@ -49,8 +49,10 @@ public class Palindrome {
         int is_palindrome = arr[0];
         boolean hasSkipped = false;
 
-        for (int i = 1; i < arr.length; i++) {
-            if (!hasSkipped && arr[i] == possible_palindrome) {
+        for (int i = 1; i < arr.length; i++)
+        {
+            if (!hasSkipped && arr[i] == possible_palindrome)
+            {
                 hasSkipped = true;
                 continue;
             }

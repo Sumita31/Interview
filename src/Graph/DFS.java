@@ -3,9 +3,7 @@ package Graph;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-/**
- * Created by sumitachauhan on 3/8/17.
- */
+
 public class DFS {
     private int V;
     private LinkedList<Integer> adj[];

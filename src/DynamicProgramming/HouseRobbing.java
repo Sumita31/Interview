@@ -10,7 +10,7 @@ package DynamicProgramming;
 
  */
 public class HouseRobbing {
-
+    //Same as maximum sum increasing  by Tushar Roy
     public int rob(int[] nums) {
         if(nums==null||nums.length==0)
             return 0;

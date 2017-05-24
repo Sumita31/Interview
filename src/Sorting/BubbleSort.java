@@ -1,7 +1,9 @@
 package Sorting;
 
 /**
- * Created by sumitachauhan on 3/8/17.
+ * On first iteration bubble out the largest element to the last index.
+ * On second iteration bubble out the second largest element to the second last index.
  */
+
 public class BubbleSort {
 }

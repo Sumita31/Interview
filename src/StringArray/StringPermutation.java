@@ -59,13 +59,12 @@ public class StringPermutation {
                 knownPermutations.add(newPermutation);
             }
         }
-
     }
 
     public static void main(String[] args) {
-//        String str = "ABC";
-//        StringPermutation obj = new StringPermutation();
-//        obj.permute(str, 0, str.length()-1);
+        String str = "123";
+        StringPermutation obj = new StringPermutation();
+        obj.permute(str, 0, str.length()-1);
         System.out.println(new StringPermutation().permutations(new int[]{1, 2, 3}));
     }
 }

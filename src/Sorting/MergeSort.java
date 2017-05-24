@@ -14,8 +14,10 @@ public class MergeSort {
         int mid = size / 2;
         int leftSize = mid;
         int rightSize = size - mid;
+
         int[] left = new int[leftSize];
         int[] right = new int[rightSize];
+
         for (int i = 0; i < mid; i++) {
             left[i] = inputArray[i];
 

@@ -5,14 +5,14 @@ package DynamicProgramming;
  Each element in the array represents your maximum jump length at that position.
  Determine if you are able to reach the last index.
  For example:
- xA = [2,3,1,1,4], return true.
+ A = [2,3,1,1,4], return true.
  A = [3,2,1,0,4], return false.
  */
 public class JumpTillEnd {
 
     public boolean canJump(int[] steps)
     {
-        if(steps.length<=1)
+        if(steps.length <= 1)
             return true;
 
         int maxStep = steps[0];

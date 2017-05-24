@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Duplicate {
 
+    //AFTER SORTING
     public int[] removeDuplicate1(int[] ar)
     {
         //remove from sorted array
@@ -30,6 +31,7 @@ public class Duplicate {
 
     }
 
+    //USING EXTRA SPACE
     public void removeDuplicate2(int[] ar)
     {
         Set<Integer> set = new HashSet<>();
@@ -45,6 +47,7 @@ public class Duplicate {
         }
     }
 
+    //WITHOUT SORTING
     public int[] removeDuplicate3(int[] arr)
     {
         //remove without sorting array

@@ -1,12 +1,33 @@
 package Miscellaneous;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by sumitachauhan on 3/6/17.
  */
 public class MatrixPermutation {
 
+
+    public void arraytriangle(int lines) {
+
+        int[][] tri = new int[lines][];
+        // incremented number to use as filler
+        int c = 1;
+        for (int i = 0; i < lines; i++) {
+            // defines number of columns
+            tri[i] = new int[i + 1];
+            for (int j = 0; j <= i; j++) {
+                tri[i][j] = c;
+                System.out.print(c + " ");
+                c++;
+            }
+            System.out.println();
+        }
+        // making new line
+        System.out.println(Arrays.deepToString(tri));
+        //return tri;
+    }
     /**
         Array Permutation
      */
@@ -59,5 +80,8 @@ public class MatrixPermutation {
 
             System.out.println();
         }
+
+        obj.arraytriangle(5);
+
     }
 }
