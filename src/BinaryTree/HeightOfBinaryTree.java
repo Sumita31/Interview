@@ -5,11 +5,17 @@ public class HeightOfBinaryTree {
 
     public int findHeight(BinaryTreeNode root)
     {
-        if(root == null)
-            return 0;
-        int leftHeight = findHeight(root.left);
-        int rightHeight = findHeight(root.right);
-        return leftHeight >= rightHeight ? leftHeight +1 : rightHeight +1;
+        //Counting number of nodes in the longest path - from node to leaf node
+//        if(root == null)
+//            return 0;
+//        int leftHeight = findHeight(root.left);
+//        int rightHeight = findHeight(root.right);
+//        return leftHeight >= rightHeight ? leftHeight +1 : rightHeight +1;
+
+        //Counting edges in the longest path - from root to leaf node
+        if(root==null)
+            return -1;
+        return Math.max(findHeight(root.left), findHeight(root.right))+1;
     }
 
     public static void main(String[] args) {

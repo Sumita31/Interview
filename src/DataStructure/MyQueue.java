@@ -3,51 +3,61 @@ package DataStructure;
 import java.util.Stack;
 
 
-public class MyQueue {
-    Stack<Integer> mainStack ;
-    Stack<Integer> tempStack ;
+public class MyQueue<K> {
+    Stack<K> primary = new Stack<>();
+    Stack<K> secondary = new Stack<>();
+    public void enqueue(K val){
 
-    public MyQueue()
-    {
-        mainStack = new Stack<>();
-        tempStack = new Stack<>();
+        primary.push(val);
     }
 
-    public void enQueue(int data)
-    {
-        mainStack.push(data);
+    public K dequeue(){
+        performCheck();
+        return secondary.pop();
     }
-
-    public int deQueue()
-    {
-        if(!tempStack.isEmpty())
-        {
-            return tempStack.pop();
-        }
-        else
-        {
-            while(!mainStack.isEmpty())
-            {
-                tempStack.push(mainStack.pop());
+    public K peek(){
+        performCheck();
+        return secondary.peek();
+    }
+    private void performCheck(){
+        if(secondary.isEmpty() && !primary.isEmpty()){
+            while(!primary.isEmpty()){
+                secondary.push(primary.pop());
             }
-            return tempStack.pop();
         }
     }
+    public boolean isEmpty(){
+        if(secondary.isEmpty() && primary.isEmpty())
+            return true;
+        else return false;
+    }
+
+    public void clear(){
+        while(!primary.isEmpty()){
+            primary.pop();
+        }
+        while(!secondary.isEmpty()){
+            secondary.pop();
+        }
+    }
+
 
     public int size()
     {
-        return mainStack.size() + tempStack.size();
+        return primary.size() + secondary.size();
+
     }
 
     public static void main(String[] args) {
         MyQueue obj = new MyQueue();
-        obj.enQueue(10);
-        obj.enQueue(20);
-        obj.enQueue(30);
-        obj.enQueue(40);
-        System.out.println(obj.deQueue());
-        System.out.println(obj.deQueue());
-        System.out.println(obj.deQueue());
+        obj.enqueue(10);
+        obj.enqueue(20);
+        obj.enqueue(30);
+        obj.enqueue(40);
+        System.out.println(obj.dequeue());
+        System.out.println(obj.dequeue());
+        System.out.println(obj.dequeue());
 
     }
 }
+

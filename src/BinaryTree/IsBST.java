@@ -8,7 +8,7 @@ import java.util.List;
  * Created by sumitachauhan on 3/8/17.
  */
 public class IsBST {
-    static List<Integer> elements = new ArrayList<>();
+    private static List<Integer> elements = new ArrayList<>();
     public static void main(String[] args) {
 
         BinaryTreeNode root = new BinaryTreeNode(20);

@@ -21,8 +21,8 @@ public class TrieEx {
 
     private class TrieNode
     {
-        Map<Character, TrieNode> children;
-        boolean endOfWord;
+        private Map<Character, TrieNode> children;
+        private boolean endOfWord;
 
         public TrieNode()
         {
@@ -67,6 +67,7 @@ public class TrieEx {
 
     private boolean delete(TrieNode curr, String word, int index)
     {
+        //method to determine if the node should be deleted or just set end of word as false
         if(index == word.length())
         {
             if(curr.endOfWord)

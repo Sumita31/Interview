@@ -1,6 +1,7 @@
 package BinaryTree;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -60,6 +61,21 @@ public class RootToLeafSumBinaryTree {
         node1.left = node5;
 
         RootToLeafSumBinaryTree obj = new RootToLeafSumBinaryTree();
-        System.out.println(obj.findRootToLeafSum(root, 20+10+8));
+        //System.out.println(obj.findRootToLeafSum(root, 20+25+30));
+
+        System.out.println(obj.rootToleafSum(root, 20+25+30));
+        Iterator i = obj.result.iterator();
+//        while(i.hasNext()){
+//            System.out.println(i.next());
+//        }
+    }
+
+    public boolean rootToleafSum(BinaryTreeNode root, int sum){
+        if(root==null)
+            return false;
+        if(root.nodeValue==sum) {
+            return true;
+        }
+        return rootToleafSum(root.left, sum-root.nodeValue) || rootToleafSum(root.right, sum-root.nodeValue);
     }
 }

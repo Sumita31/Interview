@@ -6,14 +6,15 @@ import java.util.Map;
 
 public class Fibonacci {
 
-    Map<Integer, Integer> fibMap = new HashMap<>();
+    static Map<Integer, Integer> fibMap = new HashMap<>();
+    static{
+        fibMap.put(0, 0);
+        fibMap.put(1, 1);
+    }
 
     //RECURSION
     public int fib(int n)
     {
-        fibMap.put(0, 0);
-        fibMap.put(1, 1);
-
         if(n==0) {
             return fibMap.get(0);
         }
@@ -82,21 +83,21 @@ public class Fibonacci {
         int[] A = {2,4,6,6,8,8,9};
         Fibonacci obj = new Fibonacci();
 
-        int start = (int)System.nanoTime();
-        System.out.println(obj.fib(23));
-        int end = (int)System.nanoTime();
-        int t = end-start;
-        System.out.println("runtime1: " + t);
+//        int start = (int)System.nanoTime();
+//        System.out.println(obj.fib(23));
+//        int end = (int)System.nanoTime();
+//        int t = end-start;
+//        System.out.println("runtime1: " + t);
+//
+//        System.out.println(obj.fib(21));
+//
+//        int start2 = (int)System.nanoTime();
+//        System.out.println(obj.fib(11));
+//        int end2 = (int)System.nanoTime();
+//        int t2 = end2-start2;
+//        System.out.println("runtime2: " + t2);
 
-        System.out.println(obj.fib(21));
-
-        int start2 = (int)System.nanoTime();
-        System.out.println(obj.fib(11));
-        int end2 = (int)System.nanoTime();
-        int t2 = end2-start2;
-        System.out.println("runtime2: " + t2);
-
-        //System.out.println(obj.fib(17));
+        System.out.println(obj.fib(7));
 
     }
 }
