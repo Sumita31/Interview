@@ -4,7 +4,7 @@ package Miscellaneous;
 public class Exceptions {
     // There are two types of exceptions
 
-    //1 - Runtime exception
+    //1 - Runtime exception OR Unchecked
 
     class MyCustomRuntimeException extends RuntimeException {
 
@@ -25,6 +25,7 @@ public class Exceptions {
 
     // How to use runtime exception
     public void throwsRuntimeException() {
+
         throw new MyCustomRuntimeException();
     }
 
