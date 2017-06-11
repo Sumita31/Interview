@@ -40,27 +40,15 @@ class KeyForTriangleArray{
         this.y=y;
     }
 
-    public int hashCode(){
-        return Objects.hash(x,y);
-
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 
-    public boolean equals(Object o){
-        if(o == null || !(o instanceof KeyForTriangleArray))
+    public boolean equals(Object o) {
+        if(o == null || !(o instanceof KeyForTriangleArray)) {
             return false;
-        KeyForTriangleArray that = (KeyForTriangleArray)o;
-        return (this.x == that.x && this.y == that.y);
+        }
+        KeyForTriangleArray that = ((KeyForTriangleArray) o);
+        return this.x == that.x && this.y == that.y;
     }
-
-//    public int hashCode() {
-//        return Objects.hash(x, y);
-//    }
-//
-//    public boolean equals(Object o) {
-//        if(o == null || !(o instanceof KeyForTriangleArray)) {
-//            return false;
-//        }
-//        KeyForTriangleArray that = ((KeyForTriangleArray) o);
-//        return this.x == that.x && this.y == that.y;
-//    }
 }
