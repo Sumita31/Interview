@@ -13,10 +13,16 @@ public class ReverseLL {
         node3.next=node4;
 
         ReverseLL obj = new ReverseLL();
-        Node head = obj.reverseList(node1);
-        while(head!=null){
-            System.out.println(head.data);
-            head=head.next;
+//        Node head = obj.reverseList(node1);
+//        while(head!=null){
+//            System.out.println(head.data);
+//            head=head.next;
+//        }
+
+        Node head2 = obj.RLL(node1);
+        while(head2!=null){
+            System.out.println(head2.data);
+            head2=head2.next;
         }
     }
     public Node reverseList(Node head){
@@ -37,5 +43,22 @@ public class ReverseLL {
         curr.next=prev;
         head=curr;
         return head;
+    }
+
+    public Node RLL(Node root){
+        Node prev = root;
+        Node curr = prev.next;
+        Node next = curr.next;
+        prev.next=null;
+
+        while(curr.next!=null){
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+            next=next.next;
+        }
+        curr.next=prev;
+        root=curr;
+        return root;
     }
 }

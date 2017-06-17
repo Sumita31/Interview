@@ -32,19 +32,24 @@ public class Duplicate {
     }
 
     //USING EXTRA SPACE
-    public void removeDuplicate2(int[] ar)
+    public int[] removeDuplicate2(int[] ar)
     {
         Set<Integer> set = new HashSet<>();
         for(int i: ar)
         {
             set.add(i);
         }
+        int[] res = new int[set.size ()];
+        int i=0;
 
         Iterator it = set.iterator();
         while (it.hasNext())
         {
-            System.out.print(it.next());
+            res[i]= (int)it.next();
+            //System.out.print(it.next());
+            i++;
         }
+        return res;
     }
 
     //WITHOUT SORTING
@@ -65,30 +70,57 @@ public class Duplicate {
                 }
             }
         }
-
-        int[] whitelist = new int[end];
-        System.arraycopy(arr, 0, whitelist, 0, end);
-        return whitelist;
+        int[] result = Arrays.copyOf(arr, end);
+//        int[] whitelist = new int[end];
+//        System.arraycopy(arr, 0, whitelist, 0, end);
+        return result;
     }
 
     public static void main(String[] args) {
         Duplicate obj = new Duplicate();
-        int[] ar = {99,20,30,99,20};
+        int[] ar = {99,90,90,99,20,100};
 
-        int[] res = obj.removeDuplicate1(ar);
-        for(int i=0; i<res.length; i++)
-        {
-            System.out.print(res[i]);
-        }
-
-        System.out.println();
-        obj.removeDuplicate2(ar);
+//        int[] res = obj.removeDuplicate1(ar);
+//        for(int i=0; i<res.length; i++)
+//        {
+//            System.out.print(res[i]);
+//        }
+//
+//        System.out.println();
+//        int[] res1=obj.removeDuplicate2(ar);
+//        for(int i=0; i<res1.length; i++)
+//        {
+//            System.out.print(res1[i]+", ");
+//        }
 
         System.out.println();
         int[] res2 = obj.removeDuplicate3(ar);
         for(int i=0; i<res2.length; i++)
         {
-            System.out.print(res2[i]);
+            System.out.print(res2[i]+", ");
         }
+//
+//        System.out.println (obj.hasDuplicate1(ar) );
+//        System.out.println (obj.hasDuplicate2(ar) );
+    }
+
+    public boolean hasDuplicate1(int[] a){
+        for(int i=0; i<a.length-2; i++){
+            for(int j=1; j<a.length-1; j++){
+                if(a[i]==a[j])
+                    return true;
+            }
+        }
+        return false;
+    }
+    public boolean hasDuplicate2(int[] a){
+        Arrays.sort(a);
+        for(int i=0; i<a.length-1; i++){
+            if(a[i] == a[i+1]){
+                System.out.println(a[i]);
+                return true;
+            }
+        }
+        return false;
     }
 }

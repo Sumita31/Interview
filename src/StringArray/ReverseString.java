@@ -12,6 +12,7 @@ public class ReverseString {
         if(str == null || str.length()==0) {
             System.out.println("Invalid String");
             return null;
+//            throw new IllegalArgumentException ("Input string null or empty");
         }
 
         str.trim();
@@ -73,8 +74,6 @@ public class ReverseString {
             fromIdx++;
             toIdx--;
         }
-
-
     }
 
     public static void reverseWords(char arr[]){
@@ -84,7 +83,8 @@ public class ReverseString {
             if(startIdx == -1 && arr[counter] != ' ')
                 startIdx = counter;
             else if(startIdx != -1 && (counter + 1 == arr.length ||
-                    arr[counter+1] == ' ' )) {
+                    arr[counter+1] == ' ' ))
+            {
                 reverse(arr,startIdx, counter);
                 startIdx = -1;
             }
@@ -96,8 +96,21 @@ public class ReverseString {
     public static void main(String[] args) {
         String str = "Sumita is my name";
         ReverseString obj = new ReverseString();
-        System.out.println(obj.reverseWords1(str));
-        System.out.println(obj.reverseString2(str));
 
+        System.out.println(obj.reverseWords1("Sumita Chauhan"));
+//        System.out.println(obj.reverseString2(str));
+//        System.out.println("Reverse of Sumita Chauhan is: "+obj.reverseString ("Sumita Chauhan"));
+
+    }
+
+    public String reverseString(String str){
+        char[] chars = str.toCharArray();
+        int last = chars.length-1;
+        for(int i=0; i<=last/2; i++){
+            char temp = chars[i];
+            chars[i] = chars[last-i];
+            chars[last-i]=temp;
+        }
+        return new String(chars);
     }
 }

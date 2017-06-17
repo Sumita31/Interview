@@ -19,7 +19,7 @@ public class CheckUnique {
         return true;
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) {
         CheckUnique obj = new CheckUnique();
         System.out.println(obj.isUnique("sumitas"));
     }

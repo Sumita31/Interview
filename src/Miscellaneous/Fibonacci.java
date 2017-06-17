@@ -12,8 +12,8 @@ public class Fibonacci {
         fibMap.put(1, 1);
     }
 
-    //RECURSION
-    public int fib(int n)
+    //RECURSION with memoization
+    public int fibRecursive(int n)
     {
         if(n==0) {
             return fibMap.get(0);
@@ -25,11 +25,11 @@ public class Fibonacci {
         {
             if(fibMap.containsKey(n-1)) {
             }
-            else fibMap.put(n-1, fib(n-1));
+            else fibMap.put(n-1, fibRecursive(n-1));
 
             if(fibMap.containsKey(n-2)) {
             }
-            else fibMap.put(n-1, fib(n-2));
+            else fibMap.put(n-1, fibRecursive(n-2));
 
 
             return fibMap.get(n-1)+fibMap.get(n-2);
@@ -83,21 +83,23 @@ public class Fibonacci {
         int[] A = {2,4,6,6,8,8,9};
         Fibonacci obj = new Fibonacci();
 
-//        int start = (int)System.nanoTime();
-//        System.out.println(obj.fib(23));
-//        int end = (int)System.nanoTime();
-//        int t = end-start;
-//        System.out.println("runtime1: " + t);
-//
-//        System.out.println(obj.fib(21));
-//
-//        int start2 = (int)System.nanoTime();
-//        System.out.println(obj.fib(11));
-//        int end2 = (int)System.nanoTime();
-//        int t2 = end2-start2;
-//        System.out.println("runtime2: " + t2);
+        int start = (int)System.nanoTime();
+        System.out.println(obj.fibRecursive(50));
+        int end = (int)System.nanoTime();
+        int t = end-start;
+        System.out.println("runtime1 with recursion: " + t);
 
-        System.out.println(obj.fib(7));
+        int start2 = (int)System.nanoTime();
+        System.out.println(obj.fibIt(50));
+        int end2 = (int)System.nanoTime();
+        int t2 = end2-start2;
+        System.out.println("runtime2 with iterative approach: " + t2);
+
+        int start3 = (int)System.nanoTime();
+        System.out.println(obj.fibonacci(50));
+        int end3 = (int)System.nanoTime();
+        int t3 = end3-start3;
+        System.out.println("runtime2 with tail approach: " + t3);
 
     }
 }

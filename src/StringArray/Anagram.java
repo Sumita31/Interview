@@ -21,6 +21,8 @@ public class Anagram {
         for (char c : s_array)
         {
             ++letters[c];
+            System.out.println (c );
+            System.out.println (letters[c] );
         }
 
         for (int i = 0; i < str2.length(); ++i)
@@ -60,7 +62,7 @@ public class Anagram {
         char c1[] = str1.toCharArray();
         char c2[] = str2.toCharArray();
 
-        int j = (int)c1[0];
+        int j = c1[0];
         for(int i = 1; i < c1.length; i++) {
             j = j ^ c1[i];
         }
@@ -73,6 +75,6 @@ public class Anagram {
 
     public static void main(String[] args) {
         Anagram obj = new Anagram();
-        System.out.println(obj.isAnagram2("sumita", "muitas"));
+        System.out.println(obj.isAnagram3("sssaa", "sssaa"));
     }
 }

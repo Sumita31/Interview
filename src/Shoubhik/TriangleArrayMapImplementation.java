@@ -31,7 +31,8 @@ public class TriangleArrayMapImplementation {
     }
 }
 
-class KeyForTriangleArray{
+class KeyForTriangleArray
+{
     private int x, y;
     public KeyForTriangleArray(int x, int y){
         if(x<y)

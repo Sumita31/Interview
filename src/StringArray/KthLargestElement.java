@@ -4,9 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-/**
- * Created by sumitachauhan on 3/5/17.
- */
+
 public class KthLargestElement {
 
     public int method1(int[] ar, int k)
@@ -57,7 +55,7 @@ public class KthLargestElement {
     }
 
     public static void main(String[] args) {
-        int[] ar ={2,7,11,8,9,20};
+        int[] ar ={2,7,11,8,9,20,2};
         KthLargestElement obj = new KthLargestElement();
         System.out.println(obj.method2(ar,3, false));
     }
