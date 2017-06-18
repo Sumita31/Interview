@@ -82,8 +82,7 @@ public class ReverseString {
         while(counter < arr.length){
             if(startIdx == -1 && arr[counter] != ' ')
                 startIdx = counter;
-            else if(startIdx != -1 && (counter + 1 == arr.length ||
-                    arr[counter+1] == ' ' ))
+            else if(startIdx != -1 && (arr[counter+1] == ' ' || counter + 1 == arr.length))
             {
                 reverse(arr,startIdx, counter);
                 startIdx = -1;
