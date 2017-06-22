@@ -9,13 +9,33 @@ package DynamicProgramming;
 public class KnapSack {
     public static void main(String[] args) {
         int tw = 7;
-        int[] w= {1,3,4,5};
-        int[] v ={1,4,5,7};
+        int[] w= {5,4,3,1};
+        int[] v ={7,5,4,1};
         KnapSack obj = new KnapSack();
         System.out.println(obj.maxValue(v, w, tw));
+        System.out.println(obj.maxValueKS(v,w, tw));
+    }
+
+    public int maxValueKS(int[] value, int[] weight, int totalWeight){
+        int K[][] = new int[value.length+1][totalWeight+1];
+        for(int i=0; i <= value.length; i++){
+            for(int j=0; j <= totalWeight; j++){
+                if(i == 0 || j == 0){
+                    K[i][j] = 0;
+                    continue;
+                }
+                if(j - weight[i-1] >= 0){
+                    K[i][j] = Math.max(K[i-1][j], K[i-1][j-weight[i-1]] + value[i-1]);
+                }else{
+                    K[i][j] = K[i-1][j];
+                }
+            }
+        }
+        return K[value.length][totalWeight];
     }
 
     public int maxValue(int[] value, int[] weight, int totalWeight){
+        //not producing correct result
         int[][] allVal = new int[value.length+1][totalWeight+1];
 
         for(int w=0; w<weight.length; w++){
@@ -26,7 +46,7 @@ public class KnapSack {
                     continue;
                 }
                 if(v>=weight[w-1]){
-                    allVal[w][v]= Math.max(allVal[w-1][v], value[w-1]+allVal[w-1][v-weight[w-1]]);
+                    allVal[w][v]= Math.max(allVal[w-1][v-weight[w-1]] + value[w-1], allVal[w-1][v]);
                 }
                 else{
                     allVal[w][v]=allVal[w-1][v];

@@ -25,6 +25,7 @@ public class PolishNotation {
             {
                 int a = Integer.valueOf(tempStack.pop());
                 int b = Integer.valueOf(tempStack.pop());
+                System.out.println(t);
                 switch (t)
                 {
                     case "+":

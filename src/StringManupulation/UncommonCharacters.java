@@ -68,6 +68,7 @@ public class UncommonCharacters{
         UncommonCharacters obj = new UncommonCharacters();
         String str1 = "suiiiim";
         String str2 = "ssmiuuuuzzzzzzzzz";
-        obj.findUncommonUsingMap (str1,str2);
+        obj.findUncommonUsingMap(str1,str2);
+        obj.findUncommonNaive(str1,str2);
     }
 }

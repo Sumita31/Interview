@@ -55,8 +55,8 @@ public class KthLargestElement {
     }
 
     public static void main(String[] args) {
-        int[] ar ={2,7,11,8,9,20,2};
+        int[] ar ={2,7,11,8,9,20};
         KthLargestElement obj = new KthLargestElement();
-        System.out.println(obj.method2(ar,3, false));
+        System.out.println(obj.method2(ar,3, true));
     }
 }

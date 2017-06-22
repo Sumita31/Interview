@@ -13,7 +13,7 @@ public class MajorityElement{
     public int naiveSolution(int[] input)
     {
         if(input == null || input.length ==0)
-            throw new IllegalArgumentException("input is null or empty");
+            throw null;
 
         Arrays.sort(input);
         int midElement = input[(input.length-1)/2];
@@ -31,6 +31,9 @@ public class MajorityElement{
 
     public int betterSolution(int[] input)
     {
+        /*
+        Moore’s Voting Algorithm
+         */
         int result = 0;
         int count=0;
 
@@ -47,7 +50,6 @@ public class MajorityElement{
             }
             else count--;
         }
-        System.out.println(count);
         return result;
     }
 
@@ -72,12 +74,30 @@ public class MajorityElement{
         return result;
     }
 
+    public int findMajority(int a[], int size)
+    {
+        int maj_index = 0, count = 1;
+        int i;
+        for (i = 1; i < size; i++)
+        {
+            if (a[maj_index] == a[i])
+                count++;
+            else
+                count--;
+            if (count == 0)
+            {
+                maj_index = i;
+                count = 1;
+            }
+        }
+        return a[maj_index];
+    }
+
     public static void main(String[] args) {
-        int[] input = {2,3,4,3,3,4,4,4,4};
+        int[] input = {3,3,5,4,4,2,2,2};
         MajorityElement obj = new MajorityElement();
-        //System.out.println(obj.betterSolution(input));
+        System.out.println(obj.findMajority(input, input.length));
+        System.out.println(obj.naiveSolution(input));
         System.out.println(obj.majorityElement(input));
-
-
     }
 }

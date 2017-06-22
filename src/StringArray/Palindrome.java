@@ -62,10 +62,19 @@ public class Palindrome {
 
     }
 
+    public boolean isPalindromeNaive(String str){
+        String reversed = new StringBuilder(str).reverse().toString();
+        if(str.equals(reversed)){
+            return true;
+        }else return false;
+    }
+
     public static void main(String[] args) {
         Palindrome obj = new Palindrome();
-        System.out.println("isPalindrome1"+ obj.isPalindrome1("adda"));
-        System.out.println("canFormPalindrome: " + obj.isPalindrome1("aaaaaabaaaaaaaaa"));
+        String s = "abcdcoa";
+        System.out.println(obj.isPalindromeNaive(s));
+//        System.out.println("isPalindrome1"+ obj.isPalindrome1("adda"));
+//        System.out.println("canFormPalindrome: " + obj.isPalindrome1("aaaaaabaaaaaaaaa"));
 
     }
 }

@@ -20,9 +20,7 @@ public class Anagram {
 
         for (char c : s_array)
         {
-            ++letters[c];
-            System.out.println (c );
-            System.out.println (letters[c] );
+            letters[c] = letters[c]+1;
         }
 
         for (int i = 0; i < str2.length(); ++i)
