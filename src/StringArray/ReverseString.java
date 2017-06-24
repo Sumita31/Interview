@@ -95,8 +95,9 @@ public class ReverseString {
     public static void main(String[] args) {
         String str = "Sumita is my name";
         ReverseString obj = new ReverseString();
+        char[] c = str.toCharArray();
 
-        System.out.println(obj.reverseWords1("Sumita Chauhan"));
+        obj.reverseWords(c);
 //        System.out.println(obj.reverseString2(str));
 //        System.out.println("Reverse of Sumita Chauhan is: "+obj.reverseString ("Sumita Chauhan"));
 

@@ -15,12 +15,11 @@ public class Atoi {
         char flag = '+';
         int i=0;
 
-        if(str.charAt(0) == '-')
-        {
-            flag='-';
-            i++;
+        if(str.charAt(0) == '-') {
+            flag = '-';
         }
-        else if(str.charAt(0) == '+') i++;
+
+        i++;
 
         double result = 0;
 

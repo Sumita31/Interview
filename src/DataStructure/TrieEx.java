@@ -17,6 +17,7 @@ public class TrieEx {
         obj.add("Chauhan");
         System.out.println(obj.search("Sumita"));
         System.out.println(obj.search("Chauhan"));
+        obj.add("Sum");
     }
 
     private class TrieNode
@@ -85,7 +86,7 @@ public class TrieEx {
         }
         boolean shouldDelete = delete(node, word, index+1);
 
-        if(shouldDelete && curr.endOfWord!=true)
+        if(shouldDelete && !curr.endOfWord)
         {
             curr.children.remove(ch);
             return curr.children.size()==0;

@@ -71,8 +71,8 @@ public class Palindrome {
 
     public static void main(String[] args) {
         Palindrome obj = new Palindrome();
-        String s = "abcdcoa";
-        System.out.println(obj.isPalindromeNaive(s));
+        String s = "abcwba";
+        System.out.println(obj.canFormPalindrome(s));
 //        System.out.println("isPalindrome1"+ obj.isPalindrome1("adda"));
 //        System.out.println("canFormPalindrome: " + obj.isPalindrome1("aaaaaabaaaaaaaaa"));
 

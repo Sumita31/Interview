@@ -3,18 +3,14 @@ package Thread;
 
 import java.util.concurrent.*;
 
-public class Application2 {
+public class ExecutorServiceEx {
     public static void main(String[] args) {
-
         //Thread pool is like workers in a factory, in our case its 2.
         ExecutorService executor = Executors.newFixedThreadPool(2);
-
         for(int i=0; i<5; i++){
             executor.submit(new Processor2(i));
         }
-
         executor.shutdown();
-
         System.out.println("All tasks submitted");
 
         try {
