@@ -6,17 +6,18 @@ public class StringPermutation {
 
     int count = 0;
 
-    public void permute(String str, int start, int end)
+    public void permute(String str, int start, int end, List<String> list)
     {
-        if(start == end)
-            System.out.println(str );
+        if(start == end) {
+            //System.out.println(str);
+            list.add(str);
+        }
         else
         {
             for(int i =start; i<=end; i++)
             {
                 str = swap(str,start,i);
-                permute(str, start+1, end);
-                //str = swap(str,start,i);
+                permute(str, start+1, end, list);
             }
         }
     }
@@ -63,8 +64,11 @@ public class StringPermutation {
 
     public static void main(String[] args) {
         String str = "123";
+        List<String> permutations = new ArrayList<>();
         StringPermutation obj = new StringPermutation();
-        obj.permute(str, 0, str.length()-1);
-        System.out.println(new StringPermutation().permutations(new int[]{1, 2, 3}));
+        obj.permute(str, 0, str.length() - 1, permutations);
+        for(String s:permutations){
+            System.out.print(s +", ");
+        }
     }
 }

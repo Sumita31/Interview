@@ -26,10 +26,15 @@ public class IsBST {
 
         IsBST obj = new IsBST();
         System.out.println(obj.isBSTRecursive(root));
-
-        obj.inOrderTraversal(root);
-        Iterator i = elements.iterator();
         boolean isbinaryTree=true;
+        obj.inOrderTraversal(root);
+        for(int k=0; k<elements.size()-1; k++){
+            if(elements.get(k)>elements.get(k+1)) {
+                isbinaryTree = false;
+                break;
+            }
+        }
+        Iterator i = elements.iterator();
         while(i.hasNext())
         {
             int a = (int) i.next();

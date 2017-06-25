@@ -22,8 +22,27 @@ public class SubSetSum {
 
     public static void main(String[] args) {
         int total =13;
-        int[] numbers={2,3,7,8,10};
+        int[] numbers={8,2,3,10,7};
         SubSetSum obj = new SubSetSum();
-        System.out.println(obj.subsetSum(numbers, total));
+        System.out.println(obj.findSubset(numbers, total));
+    }
+
+    public boolean findSubset(int[] values, int sum){
+        boolean[][] subset = new boolean[values.length+1][sum+1];
+        for(int i=0; i<values.length+1; i++){
+            subset[i][0]=true;
+        }
+        for(int i=1; i<values.length+1; i++){
+            for(int j=1; j<sum+1; j++){
+                if(j-values[i-1]>=0){
+                    subset[i][j]=subset[i-1][j-values[i-1]] || subset[i-1][j];
+
+                }
+                else{
+                    subset[i][j]=subset[i-1][j];
+                }
+            }
+        }
+        return subset[values.length][sum];
     }
 }
