@@ -8,12 +8,12 @@ import java.util.Stack;
 public class Traversal{
 
     public static void main(String[] args) {
-        BinaryTreeNode root1 = new BinaryTreeNode(20);
-        BinaryTreeNode node1 = new BinaryTreeNode(10);
-        BinaryTreeNode node2 = new BinaryTreeNode(15);
-        BinaryTreeNode node3 = new BinaryTreeNode(25);
-        BinaryTreeNode node4 = new BinaryTreeNode(30);
-        BinaryTreeNode node5 = new BinaryTreeNode(7);
+        BTNode root1 = new BTNode(20);
+        BTNode node1 = new BTNode(10);
+        BTNode node2 = new BTNode(15);
+        BTNode node3 = new BTNode(25);
+        BTNode node4 = new BTNode(30);
+        BTNode node5 = new BTNode(7);
 
         root1.left = node1;
         root1.right = node3;
@@ -25,12 +25,12 @@ public class Traversal{
 
     }
 
-    public void Reverse_levelOrderTreversal(BinaryTreeNode root){
-        Queue<BinaryTreeNode> q = new LinkedList<>();
-        Stack<BinaryTreeNode> s = new Stack<>();
+    public void Reverse_levelOrderTreversal(BTNode root){
+        Queue<BTNode> q = new LinkedList<>();
+        Stack<BTNode> s = new Stack<>();
         q.add(root);
         while(!q.isEmpty()){
-            BinaryTreeNode cur=q.poll();
+            BTNode cur=q.poll();
             if(cur.right!=null)
                 q.add(cur.right);
             if(cur.left!=null)
@@ -43,14 +43,14 @@ public class Traversal{
         }
     }
 
-    public void levelOrderTraversal(BinaryTreeNode root)
+    public void levelOrderTraversal(BTNode root)
     {
-        Queue<BinaryTreeNode> Q = new LinkedList<>();
+        Queue<BTNode> Q = new LinkedList<>();
         Q.add(root);
 
         while(!Q.isEmpty())
         {
-            BinaryTreeNode temp = Q.poll();
+            BTNode temp = Q.poll();
             System.out.println(temp.nodeValue);
             if(temp.left != null)
                 Q.add(temp.left);
@@ -59,17 +59,17 @@ public class Traversal{
         }
     }
 
-    public void inOrder(BinaryTreeNode root)
+    public void inOrder(BTNode root)
     {
         if(root!=null)
         {
             inOrder(root.left);
-            System.out.println(root.nodeValue);
+            System.out.print(root.nodeValue+", ");
             inOrder(root.right);
         }
     }
 
-    public void preOrder(BinaryTreeNode root)
+    public void preOrder(BTNode root)
     {
         if(root!=null)
         {
@@ -79,7 +79,7 @@ public class Traversal{
         }
     }
 
-    public void postOrder(BinaryTreeNode root)
+    public void postOrder(BTNode root)
     {
         if(root!=null)
         {

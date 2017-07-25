@@ -5,12 +5,12 @@ package BinaryTree;
  */
 public class InsertIntoBinaryTree {
 
-    public BinaryTreeNode insertNode(BinaryTreeNode root, int data)
+    public BTNode insertNode(BTNode root, int data)
     {
-        BinaryTreeNode node = new BinaryTreeNode(data);
+        BTNode node = new BTNode(data);
         if(root == null)
             return node;
-        BinaryTreeNode parent = null, current = root;
+        BTNode parent = null, current = root;
         while(current!= null)
         {
             parent = current;
@@ -27,11 +27,11 @@ public class InsertIntoBinaryTree {
         return root;
     }
 
-    public BinaryTreeNode insertNodeBT(BinaryTreeNode root, int data){
+    public BTNode insertNodeBT(BTNode root, int data){
        if(root == null)
            return root;
-       BinaryTreeNode next=root;
-       BinaryTreeNode newNode=new BinaryTreeNode(data);
+       BTNode next=root;
+       BTNode newNode=new BTNode(data);
        while(next.nodeValue>=data && next.left!=null){
            next=next.left;
        }
@@ -47,7 +47,7 @@ public class InsertIntoBinaryTree {
        return root;
     }
 
-    public void inOrderT(BinaryTreeNode root){
+    public void inOrderT(BTNode root){
         if(root==null)
         return;
         inOrderT(root.left);
@@ -56,12 +56,12 @@ public class InsertIntoBinaryTree {
     }
 
     public static void main(String[] args) {
-        BinaryTreeNode root = new BinaryTreeNode(20);
-        BinaryTreeNode node1 = new BinaryTreeNode(10);
-        BinaryTreeNode node2 = new BinaryTreeNode(15);
-        BinaryTreeNode node3 = new BinaryTreeNode(25);
-        BinaryTreeNode node4 = new BinaryTreeNode(30);
-        BinaryTreeNode node5 = new BinaryTreeNode(7);
+        BTNode root = new BTNode(20);
+        BTNode node1 = new BTNode(10);
+        BTNode node2 = new BTNode(15);
+        BTNode node3 = new BTNode(25);
+        BTNode node4 = new BTNode(30);
+        BTNode node5 = new BTNode(7);
 
         root.left = node1; //10
         root.right = node3; //25

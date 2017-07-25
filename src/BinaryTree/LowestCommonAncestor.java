@@ -5,10 +5,10 @@ package BinaryTree;
  */
 public class LowestCommonAncestor {
 
-    public BinaryTreeNode findLowestCommonAncestor(BinaryTreeNode root, int val1, int val2){
+    public BTNode findLowestCommonAncestor(BTNode root, int val1, int val2){
         if(root == null)
             return root;
-        BinaryTreeNode curr = root;
+        BTNode curr = root;
         if(curr.nodeValue==val1 || curr.nodeValue==val2){
            return curr;
         }
@@ -24,7 +24,7 @@ public class LowestCommonAncestor {
         return root;
     }
     //Tushar's method of finding lowest common ancestor in binary SEARCH tree
-    public BinaryTreeNode findLCA(BinaryTreeNode root, int firstVal, int secondVal){
+    public BTNode findLCA(BTNode root, int firstVal, int secondVal){
         if(root==null)
             return root;
         if(root.nodeValue > Math.max(firstVal,secondVal))
@@ -35,13 +35,13 @@ public class LowestCommonAncestor {
     }
 
     //recursive method to find lowest common ancestor in binary tree
-    public  BinaryTreeNode findLCABT(BinaryTreeNode root, int firstVal, int secondVal){
+    public BTNode findLCABT(BTNode root, int firstVal, int secondVal){
         if(root==null)
             return root;
         if(root.nodeValue==firstVal || root.nodeValue==secondVal)
             return root;
-        BinaryTreeNode left = findLCABT(root.left,firstVal,secondVal);
-        BinaryTreeNode right = findLCABT(root.right,firstVal,secondVal);
+        BTNode left = findLCABT(root.left,firstVal,secondVal);
+        BTNode right = findLCABT(root.right,firstVal,secondVal);
         if(left!=null && right!=null)
             return root;
         else if(left==null&& right==null)
@@ -50,12 +50,12 @@ public class LowestCommonAncestor {
     }
 
     public static void main(String[] args){
-        BinaryTreeNode root = new BinaryTreeNode(3);
-        BinaryTreeNode node1 = new BinaryTreeNode(10);
-        BinaryTreeNode node2 = new BinaryTreeNode(2);
-        BinaryTreeNode node3 = new BinaryTreeNode(20);
-        BinaryTreeNode node4 = new BinaryTreeNode(1);
-        BinaryTreeNode node5 = new BinaryTreeNode(11);
+        BTNode root = new BTNode(3);
+        BTNode node1 = new BTNode(10);
+        BTNode node2 = new BTNode(2);
+        BTNode node3 = new BTNode(20);
+        BTNode node4 = new BTNode(1);
+        BTNode node5 = new BTNode(11);
 
         root.left = node1;
         root.right = node3;
@@ -64,7 +64,7 @@ public class LowestCommonAncestor {
         node1.left = node5;
 
         LowestCommonAncestor obj = new LowestCommonAncestor();
-        BinaryTreeNode res = obj.findLowestCommonAncestor(root, 10,15);
+        BTNode res = obj.findLowestCommonAncestor(root, 10,15);
         System.out.println(res.nodeValue + " my method for LCA in Binary Search Tree");
 
         res = obj.findLCA(root, 10,15);

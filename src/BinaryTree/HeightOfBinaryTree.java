@@ -3,7 +3,7 @@ package BinaryTree;
 
 public class HeightOfBinaryTree {
 
-    public int findHeight(BinaryTreeNode root)
+    public int findHeight(BTNode root)
     {
         //Counting number of nodes in the longest path - from node to leaf node
 //        if(root == null)
@@ -20,12 +20,12 @@ public class HeightOfBinaryTree {
 
     public static void main(String[] args) {
 
-        BinaryTreeNode root = new BinaryTreeNode(20);
-        BinaryTreeNode node1 = new BinaryTreeNode(10);
-        BinaryTreeNode node2 = new BinaryTreeNode(15);
-        BinaryTreeNode node3 = new BinaryTreeNode(25);
-        BinaryTreeNode node4 = new BinaryTreeNode(30);
-        BinaryTreeNode node5 = new BinaryTreeNode(7);
+        BTNode root = new BTNode(20);
+        BTNode node1 = new BTNode(10);
+        BTNode node2 = new BTNode(15);
+        BTNode node3 = new BTNode(25);
+        BTNode node4 = new BTNode(30);
+        BTNode node5 = new BTNode(7);
 
         root.left = node1;
         root.right = node3;

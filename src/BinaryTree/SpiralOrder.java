@@ -9,12 +9,12 @@ public class SpiralOrder {
     /**
      * Two stack to print in spiral way
      */
-    public void spiralWithTwoStack(BinaryTreeNode root) {
+    public void spiralWithTwoStack(BTNode root) {
         if (root == null) {
             return;
         }
-        Stack<BinaryTreeNode> s1 = new Stack<>();
-        Stack<BinaryTreeNode> s2 = new Stack<>();
+        Stack<BTNode> s1 = new Stack<>();
+        Stack<BTNode> s2 = new Stack<>();
         s1.push(root);
 
         while (!s1.isEmpty() || !s2.isEmpty()) {
@@ -39,5 +39,22 @@ public class SpiralOrder {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        BTNode root = new BTNode(3);
+        BTNode node1 = new BTNode(10);
+        BTNode node2 = new BTNode(2);
+        BTNode node3 = new BTNode(20);
+        BTNode node4 = new BTNode(1);
+        BTNode node5 = new BTNode(11);
+
+        root.left = node1;
+        root.right = node3;
+        node1.right = node2;
+        node3.right = node4;
+        node1.left = node5;
+        SpiralOrder obj = new SpiralOrder();
+        obj.spiralWithTwoStack(root);
     }
 }

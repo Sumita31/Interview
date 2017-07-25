@@ -13,7 +13,6 @@ interface B1{
 class Player{
     String name;
     int score;
-
     Player(String name, int score){
         this.name = name;
         this.score = score;
@@ -30,7 +29,8 @@ class Checker implements Comparator<Player>{
     }
 }
 
-public class A implements A1, B1{
+public class  A implements A1, B1{
+
 
     @Override
     public void A() {

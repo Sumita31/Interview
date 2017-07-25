@@ -42,13 +42,19 @@ public class Duplicate {
         int[] res = new int[set.size ()];
         int i=0;
 
-        Iterator it = set.iterator();
-        while (it.hasNext())
-        {
-            res[i]= (int)it.next();
-            //System.out.print(it.next());
+
+        for(int t: set){
+            res[i]=t;
             i++;
         }
+
+//        Iterator it = set.iterator();
+//        while (it.hasNext())
+//        {
+//            res[i]= (int)it.next();
+//            //System.out.print(it.next());
+//            i++;
+//        }
         return res;
     }
 
@@ -87,18 +93,18 @@ public class Duplicate {
 //        }
 //
 //        System.out.println();
-//        int[] res1=obj.removeDuplicate2(ar);
-//        for(int i=0; i<res1.length; i++)
-//        {
-//            System.out.print(res1[i]+", ");
-//        }
-
-        System.out.println();
-        int[] res2 = obj.removeDuplicate3(ar);
-        for(int i=0; i<res2.length; i++)
+        int[] res1=obj.removeDuplicate2(ar);
+        for(int i=0; i<res1.length; i++)
         {
-            System.out.print(res2[i]+", ");
+            System.out.print(res1[i]+", ");
         }
+
+//        System.out.println();
+//        int[] res2 = obj.removeDuplicate3(ar);
+//        for(int i=0; i<res2.length; i++)
+//        {
+//            System.out.print(res2[i]+", ");
+//        }
 //
 //        System.out.println (obj.hasDuplicate1(ar) );
 //        System.out.println (obj.hasDuplicate2(ar) );

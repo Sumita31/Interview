@@ -3,12 +3,12 @@ package BinaryTree;
 /**
  * Created by sumitachauhan on 3/8/17.
  */
-public class BinaryTreeNode{
+public class BTNode {
     int nodeValue;
-    BinaryTreeNode left;
-    BinaryTreeNode right;
+    BTNode left;
+    BTNode right;
 
-    public BinaryTreeNode(int value){
+    public BTNode(int value){
         this.nodeValue=value;
         this.left=null;
         this.right=null;

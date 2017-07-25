@@ -5,7 +5,7 @@ package BinaryTree;
  */
 public class SearchInBinaryTree {
 
-    public BinaryTreeNode findElement(BinaryTreeNode root, int key)
+    public BTNode findElement(BTNode root, int key)
     {
         if(root == null)
             return null;

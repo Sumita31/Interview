@@ -4,7 +4,7 @@ package BinaryTree;
  * Created by sumitachauhan on 3/8/17.
  */
 public class SizeBinaryTree {
-    public int findSize(BinaryTreeNode root)
+    public int findSize(BTNode root)
     {
         if(root == null)
             return 0;

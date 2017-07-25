@@ -6,7 +6,7 @@ import java.util.StringJoiner;
 /**
  * Created by sumitachauhan on 3/6/17.
  */
-public class Anagram {
+public class    Anagram {
 
     //Check if the two strings have identical counts for each unique char
     public boolean isAnagram1(String str1, String str2)
@@ -47,9 +47,10 @@ public class Anagram {
         Arrays.sort(c2);
 
         str1 = String.copyValueOf(c1);
+        String STR3= String.valueOf(c1);
         str2 = String.copyValueOf(c2);
 
-        return str1.equals(str2);
+        return STR3.equals(str2);
 
     }
 
@@ -73,6 +74,6 @@ public class Anagram {
 
     public static void main(String[] args) {
         Anagram obj = new Anagram();
-        System.out.println(obj.isAnagram3("sssaa", "sssaa"));
+        System.out.println(obj.isAnagram2("sssaa", "sssaa"));
     }
 }

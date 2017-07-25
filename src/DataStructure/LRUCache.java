@@ -1,34 +1,22 @@
 package DataStructure;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 
 public class LRUCache<K,V> {
+    private int capacity;
+    private Map<K,V> cache;
+    private trackNode head;
+    private trackNode tail;
 
-    private class trackNode{
-        K value;
-        trackNode next;
-        trackNode previous;
-        public trackNode(K val)
-        {
-            value = val;
-            next=null;
-            previous=null;
-        }
-    }
-
-    int capacity;
-    Map<K,V> cache;
-    trackNode head;
-    trackNode tail;
-
-    LRUCache(int cap)
+    public LRUCache(int cap)
     {
-        capacity = cap;
-        cache = new HashMap<K, V>(capacity);
-        head=null;
-        tail=null;
+        this.capacity = cap;
+        this.cache = new HashMap<K, V>(capacity);
+        this.head=null;
+        this.tail=null;
     }
 
     public void put(K key, V val)
@@ -37,13 +25,10 @@ public class LRUCache<K,V> {
         {
             remove(key);
         }
-        else
+        else if(cache.size() == capacity)
         {
-            if(cache.size() == capacity)
-            {
                 remove(tail.value);
                 cache.remove(key);
-            }
         }
 
         setHead(key);
@@ -106,8 +91,24 @@ public class LRUCache<K,V> {
             }
         }
     }
+    private class trackNode{
+        K value;
+        trackNode next;
+        trackNode previous;
+        public trackNode(K val)
+        {
+            value = val;
+            next=null;
+            previous=null;
+        }
+    }
+
+    private static class LRUkey {
+        //override hashCode and equals
+    }
 
     public static void main(String[] args) {
 
+        LRUCache<LRUkey, String> lruCache = new LRUCache<>(7);
     }
 }
